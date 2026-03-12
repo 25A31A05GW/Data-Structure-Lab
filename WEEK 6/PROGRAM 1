@@ -1,0 +1,48 @@
+#include<iostream>
+using namespace std;
+
+class node //format or structure or blueprint
+{
+    public:
+        int data;
+        node *link;
+};
+
+int main()
+{
+    node *h=NULL,*cn=NULL,*t=NULL;
+    int value;
+
+    //first node
+    cout<<"enter node value";
+    cin>>value; //34
+    cn=new node();
+    cn->data=value;
+    cn->link=NULL;
+    h=cn;
+
+    //second node
+    cout<<"enter node value";
+    cin>>value; //90
+    cn=new node();
+    cn->data=value;
+    cn->link=NULL;
+    t=h;
+    t->link=cn;
+
+    //third node
+    cout<<"enter node value";
+    cin>>value;
+    cn=new node();
+    cn->data=value;
+    cn->link=NULL;
+    t=t->link;
+    t->link=cn;
+
+    t=h;
+    cout<<t->data;
+    t=t->link;
+    cout<<t->data;
+    t=t->link;
+    cout<<t->data;
+}
