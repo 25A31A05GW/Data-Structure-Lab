@@ -1,0 +1,43 @@
+#include <iostream>
+using namespace std;
+
+struct Node
+{
+    int data;
+    Node* next;
+};
+
+// Function to traverse the linked list
+void traverse(Node* head)
+{
+    Node* temp = head;
+
+    while(temp != NULL)
+    {
+        cout << temp->data << " ";
+        temp = temp->next;
+    }
+}
+
+int main()
+{
+    // Creating nodes
+    Node* head = new Node();
+    Node* second = new Node();
+    Node* third = new Node();
+
+    // Assigning data
+    head->data = 10;
+    head->next = second;
+
+    second->data = 20;
+    second->next = third;
+
+    third->data = 30;
+    third->next = NULL;
+
+    cout << "Linked List Elements: ";
+    traverse(head);
+
+    return 0;
+}
